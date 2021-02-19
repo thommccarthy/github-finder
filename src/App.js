@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
 import Navbar from './components/layout/Navbar'
+import UserItem from './Users/UserItem'
 
 class App extends Component {
   render() {
@@ -9,6 +10,7 @@ class App extends Component {
   return(
     <h1>
       <Navbar />
+      <UserItem />
     </h1>
    );
   }
