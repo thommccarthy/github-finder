@@ -7,7 +7,7 @@ class UserItem extends Component {
 
         return (
             <div className="card text-center">
-            <img src={avatar_url} className='round-img' alt="" style={{ width: '65px' }}/> 
+            <img src={avatar_url} className='round-img' alt="User Avatar" style={{ width: '65px' }}/> 
               <h3>{login}</h3>  
               <div>
                   <a href={html_url} className="btn btn-dark btn-sm my-1">MORE</a>

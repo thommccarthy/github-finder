@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 //throws error if prop type not a string
 export class Navbar extends Component {
     static defaultProps = {
-        title: 'Github Finder',
+        title: '  Github Finder',
         icon: 'fab fa-github'
     }
 
@@ -18,7 +18,8 @@ static propTypes = {
         return (
             <nav className='navbar bg-primary'>
                 <h1>
-                    <i className={ this.props.icon } />
+                    {/* refers to default props */}
+                    <i className={ this.props.icon } />  
                     { this.props.title }
                 </h1>
             </nav>
