@@ -1,9 +1,24 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
-import Navbar from './components/layout/Navbar'
-import Users from './Users/Users'
+import Navbar from './components/layout/Navbar';
+import Users from './Users/Users';
+import axios from 'axios';
 
 class App extends Component {
+  state = {
+    users: [],
+    loading: false
+  }
+
+    //this lifecycle method runs when project is mounted
+    async componentDidMount() {
+      this.setState({ loading: true });
+
+      const res = await axios.get('https://api.github.com/users');
+
+      this.setState({users: res.data, loading: false});
+    }
+
   render() {
 //conditionals go above return
 
@@ -11,7 +26,7 @@ class App extends Component {
     <h1>
       <Navbar />
       <div className="container">
-      <Users />  
+      <Users loading={this.state.loading} users={this.state.users} />  
       </div>      
     </h1>
    );
