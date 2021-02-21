@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 
 //forms in react generally have state on input
@@ -7,6 +8,11 @@ class Search extends Component {
         state = {
         text: '' 
         };
+
+static propTypes = {
+    searchUsers: PropTypes.func.isRequired,
+    clearUsers: PropTypes.func.isRequired
+}
 
 //updates the state of text with onChange method
 onChange = (e) => {
@@ -29,6 +35,7 @@ onSubmit = (e) => {
                 <input type="text" name="text" placeholder="Search Users..." value={this.state.text} onChange={this.onChange}/>
                 <input type="submit" value="Search" className="btn btn-dark btn-block"/>
                </form> 
+               <button className="btn btn-light btn-block" onClick={this.props.clearUsers}>Clear</button>
             </div>
         )
     }
