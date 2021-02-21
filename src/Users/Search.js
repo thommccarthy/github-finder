@@ -10,14 +10,17 @@ class Search extends Component {
 
 //updates the state of text with onChange method
 onChange = (e) => {
-    this.setState({ text: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
 };
 
 //use arrow functions inside react objects
 //"this" keyword responds differently
 onSubmit = (e) => {
- console.log(this.state.text);
-}
+    //prevents page from reloading on submit
+    e.preventDefault();
+ this.props.searchUsers(this.state.text);
+ this.setState({text: ''});
+};
 
     render() {
         return (
