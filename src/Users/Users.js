@@ -7,13 +7,9 @@ const Users = ({ users, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
-    //creates new props for UserItem with array method
     return (
-      //userStyle is stored as a var below
       <div style={userStyle}>
-        {users.map((
-          user //"user"
-        ) => (
+        {users.map((user) => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>
@@ -26,7 +22,6 @@ Users.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-//note commas vs semicolons
 const userStyle = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)',
