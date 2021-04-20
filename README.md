@@ -1,1 +1,1 @@
-# React search app with github api implementation
+# React search app to consume the github REST API
